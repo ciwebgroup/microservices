@@ -1,0 +1,41 @@
+{
+  "name": "microservices",
+  "version": "0.1.0",
+  "description": "Microservices middleware for CI Web Group.",
+  "main": "src/server.ts",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "dev": "ts-node-dev --poll ./src/server.ts",
+    "build": "rimraf ./dist && tsc && ts-node ./build.ts",
+    "deploy:wsl": "./bin/deploy.bat",
+    "lint": "eslint . --ext .ts",
+    "prettier": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.6.1",
+    "webflow-api": "^2.3.6",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "@types/xml2js": "^0.4.14",
+    "eslint": "^9.10.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,11 @@
+services:
+  wf-express:
+    build:
+      context: .
+      target: production
+      labels:
+        traefik.http.routers.wf_sitemaps.rule: Host(`wf.vcsr.ai`)
+        traefik.http.routers.wf_sitemaps.tls: true
+        traefik.http.routers.wf_sitemaps.tls.certresolver: lets-encrypt
+    ports:
+    - 3000:3000

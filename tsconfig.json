@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipDefaultLibCheck": true
+  },
+  "paths": {
+    "@models/*": ["src/models/*"],
+    "@routes/*": ["src/routes/*"]
+  },
+  "include": ["src/public/**/*.html", "src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
