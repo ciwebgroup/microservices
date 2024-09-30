@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Optionally log the response to the console
           if (formBlock.getAttribute("fs-recaptcha-showconsole") === "true") {
-            console.log(data);
+            console.log('microservice-response', data);
           }
         } catch (error) {
           submitButton.value = originalSubmitText; // Reset the button text on error

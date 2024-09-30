@@ -8,6 +8,7 @@
     "dev": "ts-node-dev --poll ./src/server.ts",
     "build": "rimraf ./dist && tsc && ts-node ./build.ts",
     "deploy:wsl": "./bin/deploy.bat",
+    "deploy:macos": "./bin/deploy-macos.sh",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --write ."
   },
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^8.1.3",
     "@types/cors": "^2.8.17",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
