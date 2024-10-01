@@ -6,8 +6,9 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "dev": "ts-node-dev --poll ./src/server.ts",
+    "dev:docker": "docker compose -f docker-compose.dev.yml down && docker compose -f docker-compose.dev.yml up -d --build",
     "build": "rimraf ./dist && tsc && ts-node ./build.ts",
-    "deploy:wsl": "./bin/deploy.bat",
+    "deploy:wsl": ".\\bin\\deploy.bat",
     "deploy:macos": "./bin/deploy-macos.sh",
     "lint": "eslint . --ext .ts",
     "prettier": "prettier --write ."
