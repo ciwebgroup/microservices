@@ -1,5 +1,4 @@
 node_modules/
-.pnpm_store
-.pnpm_store/
-.pnpm_store/*
+.pnpm-store/
 dist/
+*.swp
