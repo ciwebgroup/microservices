@@ -92,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
           if (data.details && data.details.success) {
             successBlock.style.display = "block";
             errorBlock.style.display = "none";
+            submitButton.style.display = "none";
+            // event.target.clear();  // Clears the form
           } else {
             successBlock.style.display = "none";
             errorBlock.style.display = "block";
