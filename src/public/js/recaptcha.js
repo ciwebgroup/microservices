@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   // Server URL and site key for ReCAPTCHA verification
-  const serverUrl = "https://wf.vcsr.ai/recaptcha/verify";
+  const serverUrl = "https://api.ciwgserver.com/recaptcha/verify";
   const siteKey = "6LewHlAqAAAAAPkcV8Vx6HffkhQBL3MVKkj98gqI";
 
   formBlocks.forEach((formBlock) => {

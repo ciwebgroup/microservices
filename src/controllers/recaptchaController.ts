@@ -49,8 +49,10 @@ export const handleVerify = async (req: Request, res: Response) => {
       // @TODO:
       // 1. Agency Analytics
       // 2. Send email to user
-      // 3. Send to What Convertsaa
+      // 3. Send to What Converts
       // 4. Send go Google Analytics as Conversion
+      // 5. Use webflow form api to submit the data back to webflow
+      // 6. Google Sheets
 
       // const forwardData = forwardResponse.data
 
@@ -60,7 +62,7 @@ export const handleVerify = async (req: Request, res: Response) => {
       )) {
         const emailPayload = {
           to: decodeEmail(config['notification-recipient']),
-          from: formData.email ?? config['notification-sender'],
+          from: config['notification-sender'] ?? formData.email,
           subject: config['notification-subject'],
           text: formData.comments,
           html: Object.entries(formData)
