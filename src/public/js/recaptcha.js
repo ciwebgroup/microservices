@@ -10,7 +10,44 @@ function getFormAttributesAsConfig(form) {
   return config;
 }
 
+// Function to get the value of a cookie by name
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+  return null;
+}
+
+  // Get the wc_client_current cookie value
+  const wcClientCurrent = getCookie('wc_client_current');
+
+  if (wcClientCurrent) {
+      // Get all divs with the ci-wc-cookie attribute
+      const divs = document.querySelectorAll('div[ci-wc-cookie]');
+
+      // Apply the cookie value to the ci-wc-cookie attribute of each div
+      divs.forEach(function(div) {
+          div.setAttribute('ci-wc-cookie', wcClientCurrent);
+      });
+  }
+
+
 document.addEventListener("DOMContentLoaded", function () {
+  
+  // Get the wc_client_current cookie value
+  const wcClientCurrent = getCookie('wc_client_current');
+
+  if (wcClientCurrent) {
+      // Get all divs with the ci-wc-cookie attribute
+      const divs = document.querySelectorAll('[ci-recaptcha-element="form-block"]');
+
+      // Apply the cookie value to the ci-wc-cookie attribute of each div
+      divs.forEach(function(div) {
+          div.setAttribute('ci-wc-cookie', wcClientCurrent);
+      });
+  }
+
+
   // Select all form blocks based on the specified attribute
   const formBlocks = document.querySelectorAll(
     '[ci-recaptcha-element="form-block"]'
