@@ -18,20 +18,6 @@ function getCookie(name) {
   return null;
 }
 
-  // Get the wc_client_current cookie value
-  const wcClientCurrent = getCookie('wc_client_current');
-
-  if (wcClientCurrent) {
-      // Get all divs with the ci-wc-cookie attribute
-      const divs = document.querySelectorAll('div[ci-wc-cookie]');
-
-      // Apply the cookie value to the ci-wc-cookie attribute of each div
-      divs.forEach(function(div) {
-          div.setAttribute('ci-wc-cookie', wcClientCurrent);
-      });
-  }
-
-
 document.addEventListener("DOMContentLoaded", function () {
   
   // Get the wc_client_current cookie value
