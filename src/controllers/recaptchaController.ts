@@ -5,6 +5,8 @@ import decodeEmail from "../utils/decodeEmail";
 
 const scoreThreshold = parseFloat(process.env.SCORE_THRESHOLD || "0.5") || 0.5;
 const secret = process.env.RECAPTCHA_SECRET_KEY || "";
+const wcApiKey = process.env.WHATCONVERTS_API_KEY || "";
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export const handleVerify = async (req: Request, res: Response) => {
@@ -98,7 +100,11 @@ export const handleVerify = async (req: Request, res: Response) => {
 
           const wcResponse = await axios.post(
             "https://app.whatconverts.com/api/v1/leads",
-            wcPayload
+            wcPayload, {
+              headers: {
+                  'Authorization': `Bearer ${wcApiKey}`
+              }
+          }
           );
           console.log("wcResponse", wcResponse);
         }
