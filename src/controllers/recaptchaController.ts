@@ -86,7 +86,7 @@ export const handleVerify = async (req: Request, res: Response) => {
         if (config["wc-profileid"] && config["wc-profileid"].length) {
 
           const wcPayload = {
-            profile_id: config["wc-profileid"],
+            profile_id: parseInt(config["wc-profileid"]),
             send_notification: false,
             lead_type: "web_form",
             ip_address: remoteip,
