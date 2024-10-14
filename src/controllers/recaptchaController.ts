@@ -47,15 +47,6 @@ export const handleVerify = async (req: Request, res: Response) => {
     console.log("verificationData", verificationData);
 
     if (verificationData.success && verificationData.score >= scoreThreshold) {
-      // @TODO:
-      // 1. Agency Analytics
-      // 2. Send email to user
-      // 3. Send to What Converts
-      // 4. Send go Google Analytics as Conversion
-      // 5. Use webflow form api to submit the data back to webflow
-      // 6. Google Sheets
-
-      // const forwardData = forwardResponse.data
 
       console.log(config);
       if (
@@ -91,10 +82,11 @@ export const handleVerify = async (req: Request, res: Response) => {
             'lead_type': "web_form",
             'ip_address': remoteip,
             'wc_client_current': config["wc-cookie"] ?? null,
-            'contact_name': formData.name,
-            'contact_email_address': formData.email,
-            'contact_phone_number': formData.phone,
-            'message': formData.comments
+            'additional_fields[contact_name]': formData.name,
+            'additional_fields[lead_content]': formData.comments,
+            'email_address': formData.email,
+            'phone_number': formData.phone,
+            'lead_content': formData.comments
           });
 
           const wcResponse = await axios.post(
