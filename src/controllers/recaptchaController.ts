@@ -85,21 +85,21 @@ export const handleVerify = async (req: Request, res: Response) => {
          */
         if (config["wc-profileid"] && config["wc-profileid"].length) {
 
-          const wcPayload = {
-            profile_id: parseInt(config["wc-profileid"]),
-            send_notification: false,
-            lead_type: "web_form",
-            ip_address: remoteip,
-            wc_client_current: config["wc-cookie"] ?? null,
-            contact_name: formData.name,
-            contact_email_address: formData.email,
-            contact_phone_number: formData.phone,
-            message: formData.comments
-          };
+          const wcPayload = new URLSearchParams({
+            'profile_id': config["wc-profileid"],
+            'send_notification': "false",
+            'lead_type': "web_form",
+            'ip_address': remoteip,
+            'wc_client_current': config["wc-cookie"] ?? null,
+            'contact_name': formData.name,
+            'contact_email_address': formData.email,
+            'contact_phone_number': formData.phone,
+            'message': formData.comments
+          });
 
           const wcResponse = await axios.post(
             "https://app.whatconverts.com/api/v1/leads",
-            wcPayload, {
+            wcPayload.toString(), {
               auth: {
                 username: process.env.WC_API_TOKEN || "",
                 password: process.env.WC_API_SECRET || "",
