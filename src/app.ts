@@ -5,8 +5,11 @@ import webhookRoutes from './routes/webhookRoutes';
 import sitemapRoutes from './routes/sitemapRoutes';
 import recaptchaRoutes from './routes/recaptchaRoutes';
 import manageWordpressRoutes from './routes/manageWordpressRoutes';
+import nearbyNowRoutes from './routes/nearbyNowRoutes'
 import validateUrl from './middleware/validateUrl';
 import path from 'path';
+import apiRoutes from './routes/apiRoutes';
+import authMiddleware from './middleware/authMiddleware';
 
 
 const app = express();
@@ -28,5 +31,7 @@ app.use('/recaptcha', recaptchaRoutes);
 app.use('/webhooks', webhookRoutes);
 app.use('/fetch-sitemap', validateUrl, sitemapRoutes);
 app.use('/manage-wordpress', manageWordpressRoutes);
+app.use('/nearby-now', nearbyNowRoutes);
+app.use('/api', authMiddleware, apiRoutes);
 
 export default app;
