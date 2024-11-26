@@ -1,7 +1,6 @@
-const ENDPOINT = process.env.ENDPOINT_URL || '/';
 
 const getApiLocation = (): string => {
-  return ENDPOINT;
+  return 'https://api.sidebox.com/plugin/';
 };
 
 export default getApiLocation
