@@ -1,0 +1,38 @@
+#nn-recent-reviews hr {
+    display: none;
+}
+
+#nn-recent-reviews .nn-review-map-cont {
+    float: left;
+    padding-right: 1em;
+}
+
+#nn-recent-reviews .nn-review-header {
+    text-align: left;
+    flex-grow: 1;
+}
+
+#nn-recent-reviews div[itemprop="itemReviewed"] > span {
+    font-weight: 800;
+}
+
+#nn-recent-reviews .nn-review-cont {
+    display: flex;
+    margin: 3em 0;
+}
+
+#nn-recent-reviews .nn-review-footer {min-width: 150px;}
+
+#nn-recent-reviews .nn-review-inner-cont {
+    margin: 3em 0;
+    padding: 3em 0;
+}
+
+#nn-recent-reviews .nn-review-rating-cat-name {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+#nn-recent-reviews .nn-review-rating-cat.nn-review-rating-cat-overall {
+    font-weight: bold;
+}
