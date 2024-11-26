@@ -1,4 +1,5 @@
 import { Request } from 'express';
+import { decodeApiKey } from './apiDecoder';
 
 const getCommonParams = (req: Request, apiKey: string) => {
   const agent = encodeURIComponent(req.get('User-Agent') || '');
@@ -9,7 +10,7 @@ const getCommonParams = (req: Request, apiKey: string) => {
     agent,
     referrer,
     hosturl: hostUrl,
-    storefronttoken: apiKey,
+    storefronttoken: decodeApiKey(apiKey),
   };
 };
 
