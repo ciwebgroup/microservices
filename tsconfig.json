@@ -17,6 +17,6 @@
     "@models/*": ["src/models/*"],
     "@routes/*": ["src/routes/*"]
   },
-  "include": ["src/public/**/*.html", "src/**/*.ts"],
+  "include": ["src/public/**/*.html", "src/**/*.ts", "src/public/js/wf-widgets/body-class.js"],
   "exclude": ["node_modules"]
 }

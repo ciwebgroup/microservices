@@ -9,6 +9,7 @@ import nearbyNowRoutes from './routes/nearbyNowRoutes'
 import validateUrl from './middleware/validateUrl';
 import path from 'path';
 import apiRoutes from './routes/apiRoutes';
+import dnsRoutes from './routes/dnsRoutes';
 import authMiddleware from './middleware/authMiddleware';
 
 
@@ -33,5 +34,6 @@ app.use('/fetch-sitemap', validateUrl, sitemapRoutes);
 app.use('/manage-wordpress', manageWordpressRoutes);
 app.use('/nearby-now', nearbyNowRoutes);
 app.use('/api', authMiddleware, apiRoutes);
+app.use('/dns', dnsRoutes);
 
 export default app;
